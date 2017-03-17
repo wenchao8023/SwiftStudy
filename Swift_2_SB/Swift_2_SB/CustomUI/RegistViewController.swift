@@ -24,6 +24,7 @@ class RegistViewController: UIViewController {
     @IBAction func RegistClick(_ sender: Any) {
         
         NSLog("注册")
+     
         
     }
     
@@ -34,6 +35,12 @@ class RegistViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.usernameTF.resignFirstResponder();
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.barTintColor = UIColor.red
     }
 
     override func didReceiveMemoryWarning() {
