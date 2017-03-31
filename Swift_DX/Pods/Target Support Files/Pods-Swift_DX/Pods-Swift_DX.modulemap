@@ -1,6 +1,0 @@
-framework module Pods_Swift_DX {
-  umbrella header "Pods-Swift_DX-umbrella.h"
-
-  export *
-  module * { export * }
-}
