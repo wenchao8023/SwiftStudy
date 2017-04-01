@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "94A8B6D31E8E36BD00A593AD"
+               BlueprintIdentifier = "949D55841E8F9CA100B70BE9"
                BuildableName = "TableViewTips.app"
                BlueprintName = "TableViewTips"
                ReferencedContainer = "container:TableViewTips.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "94A8B6D31E8E36BD00A593AD"
+            BlueprintIdentifier = "949D55841E8F9CA100B70BE9"
             BuildableName = "TableViewTips.app"
             BlueprintName = "TableViewTips"
             ReferencedContainer = "container:TableViewTips.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "94A8B6D31E8E36BD00A593AD"
+            BlueprintIdentifier = "949D55841E8F9CA100B70BE9"
             BuildableName = "TableViewTips.app"
             BlueprintName = "TableViewTips"
             ReferencedContainer = "container:TableViewTips.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "94A8B6D31E8E36BD00A593AD"
+            BlueprintIdentifier = "949D55841E8F9CA100B70BE9"
             BuildableName = "TableViewTips.app"
             BlueprintName = "TableViewTips"
             ReferencedContainer = "container:TableViewTips.xcodeproj">
