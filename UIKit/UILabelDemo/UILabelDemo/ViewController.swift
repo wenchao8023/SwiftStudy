@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     func labelSizeOfText() -> Void {
         
         //需要显示在label上的文字
-        let str = "收到回复asdfsajfdkl刷卡费上"
+        let str = "收到回复asdfsajfdkl刷卡费；爱打架发；欧弟就发了算法减肥；阿里的就发；埃里克森方法阿发；发；浪费纪检委上"
         
         //计算显示指定文字所需要的最小空间
         //1.将swift的字符串转换成OC的字符串
@@ -35,9 +35,9 @@ class ViewController: UIViewController {
         //参数3:确定文字的字体(大小)
         //NSFontAttributeName ->字体对应的key值
         //NSForegroundColorAttributeName -> 文字颜色对应的key值
-        let strSize = ocStr.boundingRect(with: CGSize.init(width: 100, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 17)], context: nil).size
+        let strSize = ocStr.boundingRect(with: CGSize.init(width: 200, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName:UIFont.systemFont(ofSize: 17)], context: nil).size
         
-        print(strSize)
+        print("strSize is : " + NSStringFromCGSize(strSize))
         
         //3.创建label显示文字
         let label = UILabel.init(frame: CGRect.init(origin: CGPoint.init(x: 20, y: 20), size: strSize))
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         //UILabel:UIView -> UIView的属性和方法，UILabel都拥有
         //=======从UIView继承下来的属性=======
         //1.创建UILabel对象
-        let label = UILabel.init(frame: CGRect.init(x: 100, y: 100, width: 200, height: 300))
+        let label = UILabel.init(frame: CGRect.init(x: 100, y: 300, width: 200, height: 300))
         //2.添加到界面上
         self.view.addSubview(label)
         //3.设置背景颜色
