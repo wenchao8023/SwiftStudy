@@ -169,7 +169,7 @@ func functoin4(name : String) -> String {
     let result = "Hello, " + name
     return result
 }
-// 使用元组返回多个值
+// 使用元组返回多个值 -- 在后面的函数章节测试
 func maxminScores(scores:[Int]) -> (maxscore: Int, maxminScore: Int) {
     var curmax = scores[0], curmin = scores[0]
     for score in scores[1..<scores.count] {
@@ -189,7 +189,7 @@ func maxminScores(scores:[Int]) -> (maxscore: Int, maxminScore: Int) {
 print("*************可选类型*****为什么这里不能做条件*************************************")
 var optValue: Int? = 8
 if (optValue != nil) {
-    print(optValue)
+    print(optValue!)
 }
 
 //！表示对可选值的强制解析，解包
@@ -201,6 +201,8 @@ if (optValue != nil) {
 if var sValue = optValue {
     print("sValue =", sValue)
 }
+
+
 
 //也等价于下面的写法
 if (optValue != nil) {
