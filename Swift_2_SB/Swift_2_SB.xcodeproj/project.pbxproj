@@ -561,6 +561,7 @@
 				94442FCE1E7A9ACB00602BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		94442FD21E7A9ACB00602BEB /* Build configuration list for PBXNativeTarget "Swift_2_SBUITests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +570,7 @@
 				94442FD41E7A9ACB00602BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
