@@ -14,7 +14,11 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+<<<<<<< HEAD
                BlueprintIdentifier = "94A8B6F41E8E46D900A593AD"
+=======
+               BlueprintIdentifier = "94A8B6691E8E2F0E00A593AD"
+>>>>>>> Swift_DX_Branch
                BuildableName = "XBook.app"
                BlueprintName = "XBook"
                ReferencedContainer = "container:XBook.xcodeproj">
@@ -32,7 +36,11 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "94A8B6F41E8E46D900A593AD"
+=======
+            BlueprintIdentifier = "94A8B6691E8E2F0E00A593AD"
+>>>>>>> Swift_DX_Branch
             BuildableName = "XBook.app"
             BlueprintName = "XBook"
             ReferencedContainer = "container:XBook.xcodeproj">
@@ -55,7 +63,11 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "94A8B6F41E8E46D900A593AD"
+=======
+            BlueprintIdentifier = "94A8B6691E8E2F0E00A593AD"
+>>>>>>> Swift_DX_Branch
             BuildableName = "XBook.app"
             BlueprintName = "XBook"
             ReferencedContainer = "container:XBook.xcodeproj">
@@ -74,7 +86,11 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
+<<<<<<< HEAD
             BlueprintIdentifier = "94A8B6F41E8E46D900A593AD"
+=======
+            BlueprintIdentifier = "94A8B6691E8E2F0E00A593AD"
+>>>>>>> Swift_DX_Branch
             BuildableName = "XBook.app"
             BlueprintName = "XBook"
             ReferencedContainer = "container:XBook.xcodeproj">

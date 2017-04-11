@@ -12,7 +12,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+<<<<<<< HEAD
 		<key>94A8B6F41E8E46D900A593AD</key>
+=======
+		<key>94A8B6691E8E2F0E00A593AD</key>
+>>>>>>> Swift_DX_Branch
 		<dict>
 			<key>primary</key>
 			<true/>
