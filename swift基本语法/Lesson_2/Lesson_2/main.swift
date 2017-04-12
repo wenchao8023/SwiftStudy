@@ -69,15 +69,19 @@ if strC.hasSuffix("lo") {
 
 var strC1 = "Apple"
 //字符转大写
-print(strC1.uppercaseString);
+print(strC1.uppercased());
 //字符转小写
-print(strC1.lowercaseString)
+print(strC1.lowercased())
 
 //字符串转整型    返回结果是一个可选类型(也可以是隐式可选)
 //不要直接转隐式的可选类型，如果不是数字的时候就会导致可选值为nil，强转的话会报错的
 var str3 = "255d"
 let rec: Int? = Int(str3)
-print(rec)
+if let rrr = rec {
+    print("字符串转整型 is \(rrr)")
+} else {
+    print("字符串转整型 failure")
+}
 
 
 
@@ -92,7 +96,9 @@ let r = v * 3
 print("v = \(v), r = \(r)")
 
 //求余运算  可以对浮点数求余
-print(5 % 1.5)
+print(5.truncatingRemainder(dividingBy: 1.5))
+print(5.truncatingRemainder(dividingBy: 3))
+
 
 /**
 *赋值运算符 = += -= *= /= %=
@@ -116,7 +122,7 @@ print("rec1 = \(rec1), min = \(min)")
  */
 var allowLeave = true
 if !allowLeave {
-    print("Yes")
+    print("fei")
 }
 let t = true
 let f = false
@@ -129,7 +135,7 @@ if t || f {
 /**
  *区间运算符
  *闭区间运算符: (a...b) 表示 包括a 和b 及中间的所有数 1...3 表示 1, 2, 3
- *半闭区间运算符: (a..<b) 表示 包括a 及中间的所有数 1..< 3 表示 1, 2
+ *半闭区间运算符: (a..<b) 表示 包括a 及中间的所有数 1..< 3 表示 1, 2    取数组里面的值
  */
 for _ in 1...5 {
     print("for _ in")
@@ -142,7 +148,18 @@ for _ in 1..<5 {
     print("半闭区间")
 }
 for i in 1..<5 {
-    print("半壁\(i)")
+    print("半闭区间\(i)")
+}
+
+let numArr = [1, 2, 3, 5, 2, 2, 3, 4, 5, 2, 1]
+var sum: Int = 0
+var lastSum: Int = 0
+for i in 0..<numArr.count { // i 表示下标
+    if i >= 1 {
+        lastSum += numArr[i - 1]
+    }
+    sum = lastSum + numArr[i]
+    print("\(lastSum) + \(numArr[i]) = \(sum)")
 }
 
 

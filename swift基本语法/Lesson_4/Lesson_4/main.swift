@@ -56,7 +56,8 @@ print("**************white循环************************************")
 var i: Int = 0
 var sum: Int = 0
 while i < 10 {
-    sum += ++i
+    i += 1
+    sum += i
 }
 print("while: sum = \(sum)")
 
@@ -70,7 +71,8 @@ print("**************基于repeat - while的循环**********************")
 i = 0
 sum = 0
 repeat {
-    sum += ++i
+    i = i + 1
+    sum += i
 } while i < 10
 print("repeat - while: sum = \(sum)")
 
@@ -82,9 +84,12 @@ print("**************基于for的循环*********************************")
  }
  */
 sum = 0
-for var i = 1; i <= 10; i++ {
+for i in 1..<10 {
     sum += i
 }
+//for var i = 1; i <= 10; i += 1 {
+//    sum += i
+//}
 print("for: sum = \(sum)")
 
 print("**************基于for - in的循环****************************")
@@ -100,7 +105,7 @@ print("for-in: sum = \(sum)")
 for a in [1, 2, 3, 4, 5] {
     print("array: \(a)")
 }
-for a in [1 : "1", "2" : 2] {
+for a in [1 : "1", "2" : 2] as [AnyHashable : Any] {
     print("dic: \(a)")
 }
 for (a, b) in [1 : "1", 2 : "2"] {

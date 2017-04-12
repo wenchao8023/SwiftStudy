@@ -122,7 +122,9 @@ Swift是一门安全的编程语言. 正如苹果所言, 可选类型就是证�
 		    print(message)
 		}
 		
- `if let`或者`if var`是可选绑定的两个关键字. 使用自然语言来描述上面这段代码的话, 意思就是如果stockCode有值,解包它,并且将它的值赋值给tempStockCode, 然后执行下面的条件语句; 如果stockCode为空, 直接跳过条件语句块.		
+ `if let`或者`if var`是可选绑定的两个关键字. 使用自然语言来描述上面这段代码的话, 意思就是如果stockCode有值,解包它,并且将它的值赋值给tempStockCode, 然后执行下面的条件语句; 如果stockCode为空, 直接跳过条件语句块.
+ 
+	
 	**等价于<==>**
 	
 		let text = "Stock Code - "

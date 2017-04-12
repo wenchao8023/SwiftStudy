@@ -46,10 +46,10 @@ var array = [25, 43, 1, 53, 54]
 func showArray() {
     print(array)
 }
-func bubbleSort(inout array: [Int]) {
+func bubbleSort(_ array: inout [Int]) {
     let cnt = array.count
-    for var i = 0; i < cnt; i++ {
-        for var j = i + 1; j < cnt; j++ {
+    for i in 0 ..< cnt {
+        for j in i + 1 ..< cnt {
             if (array[i] > array[j]){
                 let t = array[i]
                 array[i] = array[j]
@@ -63,10 +63,10 @@ func bubbleSort(inout array: [Int]) {
 //bubbleSort(&array)
 //showArray()
 
-func bubbleSort1(inout array: [Int], cmp: (Int, Int) ->Int) {
+func bubbleSort1(_ array: inout [Int], cmp: (Int, Int) ->Int) {
     let cnt = array.count
-    for var i = 0; i < cnt; i++ {
-        for var j = i + 1; j < cnt; j++ {
+    for i in 0 ..< cnt {
+        for j in i + 1 ..< cnt {
             if (cmp(array[i], array[j]) == -1){
                 let t = array[i]
                 array[i] = array[j]
@@ -93,10 +93,10 @@ let intCmp = {
 /**
  *(4)闭包表达式的优化
  */
-func bubbleSort2(inout array: [Int], cmp: (Int, Int) ->Int) {
+func bubbleSort2(_ array: inout [Int], cmp: (Int, Int) ->Int) {
     let cnt = array.count
-    for var i = 0; i < cnt; i++ {
-        for var j = i + 1; j < cnt; j++ {
+    for i in 0 ..< cnt {
+        for j in i + 1 ..< cnt {
             if (cmp(array[i], array[j]) == -1){
                 let t = array[i]
                 array[i] = array[j]
@@ -113,10 +113,10 @@ func bubbleSort2(inout array: [Int], cmp: (Int, Int) ->Int) {
 //showArray()
 
 //为了书写方便, 往往将闭包表达式作为函数形参的最后一个参数书写
-func bubbleSort3(inout array: [Int], cmp: (Int, Int) ->Int) {
+func bubbleSort3(_ array: inout [Int], cmp: (Int, Int) ->Int) {
     let cnt = array.count
-    for var i = 0; i < cnt; i++ {
-        for var j = i + 1; j < cnt; j++ {
+    for i in 0 ..< cnt {
+        for j in i + 1 ..< cnt {
             if (cmp(array[i], array[j]) == -1){
                 let t = array[i]
                 array[i] = array[j]
@@ -148,21 +148,21 @@ showArray()
 /**
  *(6)嵌套函数
  */
-func bubbleSortFunction(inout array: [Int]) {
+func bubbleSortFunction(_ array: inout [Int]) {
     let cnt = array.count
     sortBubble(&array, cnt: cnt)
     
 }
-func sortBubble(inout array: [Int], cnt: Int) {
-    for var i = 0; i < cnt; i++ {
-        for var j = i + 1; j < cnt; j++ {
+func sortBubble(_ array: inout [Int], cnt: Int) {
+    for i in 0 ..< cnt {
+        for j in i + 1 ..< cnt {
             if (array[i] > array[j]){
                 swapValue(&array[i], b: &array[j])
             }
         }
     }
 }
-func swapValue(inout a: Int, inout b: Int) {
+func swapValue(_ a: inout Int, b: inout Int) {
     let t = a
     a = b
     b = t
@@ -175,10 +175,10 @@ showArray()
 /**
  *(7)闭包值捕获
  */
-func getIncFunc(inc: Int) ->(Int) ->Int {
+func getIncFunc(_ inc: Int) ->(Int) ->Int {
     var mt = 10
-    func incFunc(v: Int) ->Int {
-        mt++
+    func incFunc(_ v: Int) ->Int {
+        mt += 1
         return inc + v + mt
     }
     

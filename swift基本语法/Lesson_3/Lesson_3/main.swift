@@ -26,7 +26,7 @@ print(array5)
 /**
  *(2)数组中可以存放不同类型的数据  主要是一些基本数据类型
  */
-var array6 = [2.2, "aa", 5]
+var array6 = [2.2, "aa", 5] as [Any]
 var array7: Array<Any> = [3, 3.6, "bb"]
 
 print(array6)
@@ -41,7 +41,7 @@ print(array8[0])
 //元素的插入
 array8.append(5)    //在数组的尾部插入一个元素
 print(array8)
-array8.insert(6, atIndex: 1)
+array8.insert(6, at: 1)
 print(array8)
 
 /**
@@ -55,14 +55,14 @@ array9.removeFirst()    //删除第一个元素
 print("array9 = \(array9)")
 array9.removeLast()     //删除最后一个元素
 print("array9 = \(array9)")
-array9.removeAtIndex(1) //删除指定位置的元素
+array9.remove(at: 1) //删除指定位置的元素
 print("array9 = \(array9)")
 //保留数组容量删除数组中的所有元素    --> true
-array9.removeAll(keepCapacity: true)
+array9.removeAll(keepingCapacity: true)
 print("array9 = \(array9)")
 print("array9 = \(array9.capacity)")
 //删除数组中的所有元素，同时也删除容量 --> false
-array9.removeAll(keepCapacity: false)
+array9.removeAll(keepingCapacity: false)
 print("array9 = \(array9)")
 print("array9 = \(array9.capacity)")
 
@@ -85,7 +85,7 @@ array10[2...3] = []
 print(array10)
 array10[3...3] = [6]
 print(array10)
-array10.replaceRange(Range(start: 0, end: 2), with: [2, 3, 4, 5, 6, 7]) //和区间替换一样的，可以多也可以少
+array10.replaceSubrange((0 ..< 2), with: [2, 3, 4, 5, 6, 7]) //和区间替换一样的，可以多也可以少
 print(array10)
 array10 += [9]  //数组还可以做 + 运算，表示两个数组连接起来 <=>array10.append(9)
 print(array10)
@@ -111,10 +111,10 @@ for elm in array10 {
  */
 print("*******字典的概念和定义************************************")
 
-var dic = [:]   //定义一个空字典
+var dic: Dictionary<AnyHashable, AnyHashable> = [:]   //定义一个空字典
 dic = [1 : "1", 2 : "2"]
 var dic1: Dictionary<String, Int> = ["3" : 3]
-var dic2 = ["1" : 1, 2 : "2"]
+var dic2 = ["1" : 1, 2 : "2"] as [AnyHashable : Any]
 print(dic)
 print(dic1)
 print(dic2)
@@ -154,7 +154,7 @@ dic3["an"] = "一个"
 print(dic3)
 
 //删除键值对，返回一个可选类型, 删除之前的key 对应的值
-if let rec = dic3.removeValueForKey("an") {
+if let rec = dic3.removeValue(forKey: "an") {
     print(dic3)
     print(rec)
 }
@@ -177,10 +177,10 @@ for value in dic3.values {
 *(1)range 与 区间运算符
 */
 print("*******range 与 区间运算符************************************")
-var range: Range<Int> = 1...3
-var range1: Range<Int> = Range(start: 1, end: 3)
-var range2: Range<Int> = 1..<3
-print(range)
+//var range: CountableRange<Int> = 1...3
+var range1: CountableRange<Int> = 1..<3
+var range2: CountableRange<Int> = 1..<3
+//print(range)
 print(range1)
 print(range2)
 

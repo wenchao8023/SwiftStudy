@@ -24,7 +24,7 @@ class MyPoint {
 //        _y = y
 //    }
 
-    func setP(x: Double, y: Double) {
+    func setP(_ x: Double, y: Double) {
         self._x = x
         self._y = y
     }
@@ -48,7 +48,7 @@ p1.description()
  *      在参数列表中的，第一个参数默认为内部参数，第一个以后的参数即作为内部参数也作为外部参数
  *      如果不想后面的参数也作为外部参数，就在前面加一个 "_ "
  */
-func setP(x: Double, _ y: Double) {
+func setP(_ x: Double, _ y: Double) {
     print("x = \(x), y = \(y)")
 }
 setP(10, 10)
@@ -57,7 +57,7 @@ setP(10, 10)
  *（3）self解释
  *      self表示当前对象，和oc中的理解是一样的
  */
-func setX(x x: Double, y: Double) {
+func setX(x: Double, y: Double) {
     
 }
 
@@ -71,7 +71,7 @@ class MyPerson {
     var name: String = ""
     var age: Int = 0
     
-    /*mutating*/ func set(name name: String, age: Int) {    //现在的版本可以不用mutating来修饰就可以直接修改变量属性了
+    /*mutating*/ func set(name: String, age: Int) {    //现在的版本可以不用mutating来修饰就可以直接修改变量属性了
         self.name = name
         self.age = age
     }
@@ -89,20 +89,20 @@ m1.description()
 
 
 enum LightSwich {
-    case OFF, LOW, HIGH
+    case off, low, high
     
     mutating func next() {
         switch self {
-        case OFF:
-            self = LOW
-        case LOW:
-            self = HIGH
-        case .HIGH:
-            self = OFF
+        case .off:
+            self = .low
+        case .low:
+            self = .high
+        case .high:
+            self = .off
         }
     }
 }
-var light = LightSwich.LOW
+var light = LightSwich.low
 light.next()
 print("light = \(light)")
 
