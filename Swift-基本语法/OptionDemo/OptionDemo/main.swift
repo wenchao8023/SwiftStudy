@@ -13,7 +13,7 @@ print("Hello, World!")
 /**
  *可选类型   optionals 两种状态： 有值 没值(nil)
  */
-print("*************可选类型*****为什么这里不能做条件*************************************")
+print("*************可选类型******************************************")
 var optValue: Int? = 8
 if optValue != nil {
     print(optValue!)
@@ -153,4 +153,10 @@ if let sharePrice = findStockCode2(company: "Google")?.price {
     let totalCost = sharePrice * 100
     print("Google 100股股票的价格为 : \(totalCost)")
 }
+
+
+
+
+
+
 

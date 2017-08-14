@@ -13,6 +13,8 @@
 		94A8B7661E8E70E600A593AD /* UILabelDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94A8B7641E8E70E600A593AD /* UILabelDemo.xcdatamodeld */; };
 		94A8B7681E8E70E600A593AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94A8B7671E8E70E600A593AD /* Assets.xcassets */; };
 		94A8B76B1E8E70E600A593AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94A8B7691E8E70E600A593AD /* LaunchScreen.storyboard */; };
+		94A96FE91EB1C34A0070313B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A96FE81EB1C34A0070313B /* Person.swift */; };
+		94A96FEB1EB1CB330070313B /* LazyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A96FEA1EB1CB330070313B /* LazyClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		94A8B7671E8E70E600A593AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94A8B76A1E8E70E600A593AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94A8B76C1E8E70E600A593AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94A96FE81EB1C34A0070313B /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		94A96FEA1EB1CB330070313B /* LazyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				94A8B75D1E8E70E600A593AD /* AppDelegate.swift */,
 				94A8B75F1E8E70E600A593AD /* ViewController.swift */,
+				94A96FE81EB1C34A0070313B /* Person.swift */,
+				94A96FEA1EB1CB330070313B /* LazyClass.swift */,
 				94A8B7611E8E70E600A593AD /* Main.storyboard */,
 				94A8B7671E8E70E600A593AD /* Assets.xcassets */,
 				94A8B7691E8E70E600A593AD /* LaunchScreen.storyboard */,
@@ -140,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A96FEB1EB1CB330070313B /* LazyClass.swift in Sources */,
 				94A8B7661E8E70E600A593AD /* UILabelDemo.xcdatamodeld in Sources */,
 				94A8B7601E8E70E600A593AD /* ViewController.swift in Sources */,
+				94A96FE91EB1C34A0070313B /* Person.swift in Sources */,
 				94A8B75E1E8E70E600A593AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +314,7 @@
 				94A8B7711E8E70E600A593AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

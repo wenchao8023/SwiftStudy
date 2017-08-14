@@ -68,7 +68,8 @@ let floatValue: Float = 3.4;
  *两种基本类型是否可以隐式转换
  */
 var intVar: Int = 10;
-//var doubleVar: Double = intVar;   报错了，表示不允许
+//var doubleVar: Double = intVar;   //报错了，表示不允许
+
 
 
 
@@ -108,6 +109,10 @@ if turnOffLight {   //if 后面只能放bool值, 不能再放整数了
 else {
     print("Turn On")
 }
+
+var tureValue = 1;
+
+
 
 /**
  *元组    (30, "hello")
@@ -186,7 +191,7 @@ func maxminScores(scores:[Int]) -> (maxscore: Int, maxminScore: Int) {
 /**
 *可选类型   optionals 两种状态： 有值 没值(nil)
 */
-print("*************可选类型*****为什么这里不能做条件*************************************")
+print("*************可选类型******************************************")
 var optValue: Int? = 8
 if (optValue != nil) {
     print(optValue!)
@@ -232,6 +237,7 @@ if impOptValue != nil {
 
 //如果定义的是隐式可选类型的话，就不需要手动进行解包，如果可选值是nil，那么还是会导致运行时错误
 var iValue2: Int = impOptValue      //可以直接赋值，不需要加！
+
 
 
 

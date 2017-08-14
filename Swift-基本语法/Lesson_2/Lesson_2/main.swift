@@ -163,6 +163,16 @@ for i in 0..<numArr.count { // i 表示下标
 }
 
 
+// 字符串截取
+let str10 = "www.missajj.com"
+// 转成 NSString 调用 NSSting 的字符串截取方法
+var subStr = (str10 as NSString).substring(to: 4)
+subStr = (str10 as NSString).substring(from: 5)
+subStr = (str10 as NSString).substring(with: NSRange.init(location: 2, length: 4))
+
+
+let str11: NSString = "我可以使用NS中的类型"
+print(str11.substring(with: NSRange.init(location: 5, length:6)))
 
 
 
