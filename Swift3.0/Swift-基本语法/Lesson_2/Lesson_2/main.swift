@@ -9,15 +9,15 @@
 import Foundation
 
 /**
- *字符和字符串
- *计算机本质（编程核心）是： 数据 + 数据处理
- *本章： 字符信息 + 字符信息处理
+ *  字符和字符串
+ *  计算机本质（编程核心）是： 数据 + 数据处理
+ *  本章： 字符信息 + 字符信息处理
  */
 
 print("********字符*******************************")
 /**
- *定义单个字符的时候用的是""，不是''
- *swift语言是兼容unit标准的，所以字符可以直接是汉字
+ *  定义单个字符的时候用的是""，不是''
+ *  swift语言是兼容unit标准的，所以字符可以直接是汉字
  */
 let a: Character = "a"
 var b: Character
@@ -26,8 +26,8 @@ b = "必"
 
 print("********字符串*******************************")
 /**
- *字符串本身也是一个结构体
- *字符串里面遵循的规则不再仅仅是ASCLL标准了，而是遵循unit标准
+ *  字符串本身也是一个结构体
+ *  字符串里面遵循的规则不再仅仅是ASCLL标准了，而是遵循unit标准
  */
 var c: String
 c = "qw\ne\0r0/郭文超\tU0001f496"
@@ -161,6 +161,23 @@ for i in 0..<numArr.count { // i 表示下标
     sum = lastSum + numArr[i]
     print("\(lastSum) + \(numArr[i]) = \(sum)")
 }
+
+sum = 0;
+var countStr = "";
+for i in 0..<numArr.count
+{
+    sum = sum + numArr[i];
+    if i == 0
+    {
+        countStr = "\(numArr[i])";
+    }
+    else
+    {
+        countStr = countStr + " + " + "\(numArr[i])";
+    }
+    
+}
+print("总和为: \(sum) = \(countStr)");
 
 
 // 字符串截取

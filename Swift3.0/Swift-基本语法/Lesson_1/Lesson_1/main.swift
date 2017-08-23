@@ -9,46 +9,51 @@
 //导入框架
 import Foundation
 
-//最后加不加封号都可以
+/// 编码风格    句末最后加不加封号都可以，习惯还是加上
+
+
 /**
- *变量和常量
+ *  变量和常量
  */
+
 //定义变量
 var a = 10;
+print("a = \(a)");
 a = 9;
 print("a = \(a)");
 
 //定义常量, 不可以被修改
 let b = 10;
-print(b);
+print("b = \(b)");
+
 
 
 /**
- *类型标注
- *var 变量: 类型
+ *  类型标注
+ *  格式  [var 变量名: 类型]
  */
 var x: Int;
 x = 10;
 let y: Int = 10;    //常量必须在定义的时候赋值
 
 /**
- *名称不用再符合标识符的规范，甚至可以是中文名称
- *不能以数字开头
- *不能使用特殊符号
+ *  名称不用再符合标识符的规范，甚至可以是中文名称
+ *  不能以数字开头
+ *  不能使用特殊符号
  */
 let 常量 = 10;
 print("常量 = ",常量);
 
 /**
- *基本数据类型：整数类型 和小数类型
+ *  基本数据类型：整数类型 和 小数类型
  */
 
 /**
- *整数类型，默认整形类型是Int
- *Int8/16/32/64
- *UInt8/16/32/64
- *UInt8.max可以获得这个类型的最大值
- *UInt8.max ……………………………………最小值
+ *  整数类型，默认整形类型是Int
+ *  Int8/16/32/64
+ *  UInt8/16/32/64
+ *  UInt8.max 或者是 UInt8(UINT8_MAX)可以获得这个类型的最大值
+ *  UInt8.min 或者是 UInt8(UINT8_MIN)……………………………………最小值
  */
 let Integer: Int = 10;
 let unsignedInteger: UInt = 20;
@@ -58,14 +63,16 @@ let uIntM: UInt8 = UInt8.max;
 let intMin: Int8 = Int8(INT8_MIN);
 print(" Int8.max = \(intM)\n Uint8.max = \(uIntM)\n Int8.min = \(intMin)");
 
+
+
 /**
- *小数类型
- *Double/Float
+ *  小数类型
+ *  Double/Float
  */
 let floatValue: Float = 3.4;
 
 /**
- *两种基本类型是否可以隐式转换
+ *  两种基本类型是否可以隐式转换
  */
 var intVar: Int = 10;
 //var doubleVar: Double = intVar;   //报错了，表示不允许
@@ -74,7 +81,7 @@ var intVar: Int = 10;
 
 
 /**
- *类型推断和类型安全
+ *  类型推断和类型安全
  */
 let stringValue = "Hello"   //<=>let stringValue: String = "Hello"
 
@@ -88,18 +95,23 @@ var uint32Value2: UInt32 = 10;
 var uint32Value3: UInt32 = uint32Value1 + uint32Value2; //允许, 只有完全相同的类型才能做运算
 
 /**
-*类型转换:  类型(变量)
-*/
+ *  类型转换:  类型(变量)
+ */
 print("************类型转换*******************************************************")
-print("转换前 : \(intVar)")
-intVar = Int(floatValue)
-print("转换后 : \(intVar)")
+
+// float -> Int
+print("floatValue 转换前 : \(floatValue)");
+intVar = Int(floatValue);
+print("floatValue 转换后 : \(floatValue) ->> \(intVar)");
+
+// Int -> float
 var FI: Float = 1.0
+print("FI 转换前 : \(FI)")
 FI = Float(intVar)
-print(FI)
+print("FI 转换后 : \(FI)")
 
 /**
- *BOOL 类型
+ *  BOOL 类型
  */
 print("************BOOL类型*******************************************************")
 let turnOffLight = true
@@ -115,19 +127,21 @@ var tureValue = 1;
 
 
 /**
- *元组    (30, "hello")
- *将不同数据类型的数据组合在一起   直接使用，类似结构体但不需声明
- *可以作为参数在函数中使用，可以携带多个值
+ *  元组    (30, "hello")
+ *  将不同数据类型的数据组合在一起   直接使用，类似结构体但不需声明
+ *  可以作为参数在函数中使用，可以携带多个值
  */
 print("*************元组类型******************************************************")
 let student = ("zhangSan", 23, 8.5) //<=>let student: (String, Int, Double) = ("zhangSan", 23, 8.5)
 
 //获取元组对应下标的元素1
+print("通过下标获取元素");
 print(student.0)
 print(student.1)
 print(student.2)
 
 //获取元组对应下标的元素2（提取元组）
+print("提取元组");
 let (name, age, score) = student
 print(name)
 print(age)
@@ -138,6 +152,8 @@ print(name1)
 //print(age)
 //print(score)
 
+/// 字典做元素
+print("字典做元素");
 let student1 = (xingMing:"zhangSan", nianLing:"23")
 print(student1.xingMing)
 print(student1.nianLing)
@@ -154,6 +170,7 @@ print("testStd modify is : \(testStd)")
 
 let arr = [1, 2, 3, 5, 6, 2, 3]
 //print("返回的元组是 : \(self.functoin4(arr))")
+
 
 
 
@@ -189,8 +206,8 @@ func maxminScores(scores:[Int]) -> (maxscore: Int, maxminScore: Int) {
 
 
 /**
-*可选类型   optionals 两种状态： 有值 没值(nil)
-*/
+ *  可选类型   optionals 两种状态： 有值 没值(nil)
+ */
 print("*************可选类型******************************************")
 var optValue: Int? = 8
 if (optValue != nil) {
@@ -216,8 +233,8 @@ if (optValue != nil) {
 }
 
 /**
-*隐式解析可选类型   两种状态： 有值 没值(nil)
-*/
+ *  隐式解析可选类型   两种状态： 有值 没值(nil)
+ */
 print("*************隐式解析可选类型****************************************************")
 var impOptValue: Int! = 9
 if impOptValue != nil {
@@ -225,12 +242,12 @@ if impOptValue != nil {
 }
 
 if let iValue = impOptValue {
-    print(impOptValue)
+    print(iValue)
 }
 
 if impOptValue != nil {
     let iValue1 = impOptValue!
-    print(impOptValue)
+    print(iValue1)
 }
 
 //隐式可选类型 和可选类型的区别
