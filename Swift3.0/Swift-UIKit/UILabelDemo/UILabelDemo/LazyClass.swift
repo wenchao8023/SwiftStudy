@@ -14,4 +14,8 @@ class LazyClass: NSObject {
         () -> [String] in
         return ["why", "lmj", "lnj"]
     }()
+    
+    func hhhhh() -> Void {
+        print(array)
+    }
 }

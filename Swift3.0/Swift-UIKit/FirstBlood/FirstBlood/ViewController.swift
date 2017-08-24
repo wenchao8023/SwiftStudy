@@ -54,7 +54,8 @@ class ViewController: UIViewController {
         
         //b.旋转
         //参数:旋转角度(圆周率对应的角度值)
-        redView.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI_4 / 2))
+//        redView.transform = CGAffineTransform.init(rotationAngle: CGFloat(M_PI_4 / 2))
+        redView.transform = CGAffineTransform.init(rotationAngle: .pi / 8)
         
         //c.平移
         //参数1:在x方向上平移的距离，负值->向左移，正值->向右移

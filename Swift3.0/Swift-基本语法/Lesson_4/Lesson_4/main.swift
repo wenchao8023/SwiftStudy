@@ -73,7 +73,7 @@ sum = 0
 repeat {
     i = i + 1
     sum += i
-} while i < 10
+} while i < 0
 print("repeat - while: sum = \(sum)")
 
 print("**************基于for的循环*********************************")

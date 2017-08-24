@@ -12,8 +12,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     var tableView: UITableView? = nil
     
-    var showView: UIView? = nil
-    
     var selfWidth: CGFloat = 0.0
     
     var selfHeight: CGFloat = 0.0
@@ -23,6 +21,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var dataArr: NSArray = []
     
     var subArr: NSArray = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = "控件大集合"
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,18 +58,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             "UIAlertView",
             "UITextView"]
         
-//        self.createShowView()
-        
         self.createTableView()
     }
     
-    func createShowView() -> Void {
-        
-        showView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: selfWidth, height: selfHeight))
-        showView?.backgroundColor = UIColor.lightGray
-        self.view.addSubview(showView!)
-    }
-    
+    /**
+     创建tableView
+     */
     func createTableView() -> Void {
         
         tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: selfWidth, height: (selfHeight - showHeight)))
@@ -72,6 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView?.delegate = self
         self.view.addSubview(tableView!)
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -97,14 +97,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        self.perform(#selector(createMView(indexPath:)), with: indexPath)
         let vc: DetailViewController? = DetailViewController()
         
         vc?.indexPath = indexPath as NSIndexPath?
+        vc?.myTille = "\(self.dataArr[indexPath.row])-\(self.subArr[indexPath.row])";
         
         if indexPath.row == 6 {
             let alertControl = UIAlertController.init(title: "表单视图", message: "提示信息", preferredStyle: .actionSheet)
             
+            let desvAction = UIAlertAction.init(title: "警告", style: .destructive, handler: { (_) in
+                print("警告");
+            })
             
             let alertAction1 = UIAlertAction.init(title: "确定1", style: .default) { (_) in
                 print("确定1")
@@ -125,6 +128,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let alertAction2 = UIAlertAction.init(title: "取消", style: .cancel) { (_) in
                 print("取消")
             }
+            
+            alertControl.addAction(desvAction);
             
             alertControl.addAction(alertAction1)
             
@@ -185,10 +190,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         self.navigationController?.pushViewController(vc!, animated: true)
-        self.present(vc!, animated: true, completion: nil)
-        
-        
-
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -10,6 +10,12 @@ import UIKit
 
 class Test1_ViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.view.backgroundColor = UIColor.white
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -15,10 +15,14 @@ class DetailViewController: UIViewController {
 
     public var indexPath: NSIndexPath? = nil
     
+    public var myTille: String? = nil;
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        self.view.backgroundColor = UIColor.cyan
         
-        self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = self.myTille
     }
     
     override func viewDidLoad() {
@@ -156,11 +160,17 @@ class DetailViewController: UIViewController {
         //3.核心属性
         //进度:0~1
         //设置当前进度
-        progress.progress = 0.5
-        progress.setProgress(0.6, animated: true)
+        progress.progress = 0.2
+
+        sleep(1)
+        
+        progress.setProgress(0.8, animated: true)
+        
+        
         //4.颜色相关
         //5.图片相关
     }
+
     
     //MARK: --步进器
     func function3() -> Void {
@@ -308,9 +318,6 @@ class DetailViewController: UIViewController {
         self.view.addSubview(textView)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.dismiss(animated: true, completion: nil)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -8,6 +8,131 @@
 
 import UIKit
 
+
+struct Point {
+    var x = 0.0
+    var y = 0.0
+}
+
+struct Size {
+    var width = 0.0
+    var height = 0.0
+}
+
+/**
+ *  自定义一个 rect，实现 center 的 setter 和 getter 方法
+ */
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    var center : Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        set(newCenter) {
+            origin.x = newCenter.x - (size.width / 2)
+            origin.y = newCenter.y - (size.height / 2)
+        }
+    }
+}
+
+/**
+ *  上个 rect 中 setter 方法的简写
+ *  如果有实现 setter 方法，则会默认用 newValue 来代替新的值，所以 setter 方法也不需要携带参数了
+ */
+struct simpleSetterInRect {
+    var origin = Point()
+    var size = Size()
+    var center : Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        /**
+         *  只要改变了 origin 的位置，那么就 center 的位置就会相应的发生改变，所以这里的 set 方法是对 origin 来进行操作
+         */
+        set {
+            origin.x = newValue.x - (size.width / 2)
+            origin.y = newValue.y - (size.height / 2)
+        }
+    }
+}
+
+
+
+struct Cuboid {
+    var width = 0.0, height = 0.0, depth = 0.0
+    var volume: Double {
+        return width * height * depth
+    }
+}
+
+
+
+
+
+/// 属性观察者
+
+class StepCounter: NSObject {
+    var totalSteps: Int = 0{
+        willSet(newTotalSteps){
+            print("About to set totalSteps to \(newTotalSteps)")
+        }
+        didSet {
+            if totalSteps > oldValue {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+
+/// 类型属性
+struct SomeStructure {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty: Int
+    {
+        return 666
+    }
+}
+
+enum SomeEnumeration {
+    static var storedTypeProperty = "Some value."
+    static var computedTypeProperty: Int
+    {
+        return 555
+    }
+}
+
+class SomeClass
+{
+    class var computedTypeProperty:Int
+    {
+        return 333
+    }
+}
+
+
+struct AudioChannel {
+    static let thresholdLevel = 10
+    static var maxInputLevelForAllChannels = 0
+    var currentLevel: Int = 0
+    {
+        didSet {
+            if currentLevel > AudioChannel.thresholdLevel {
+                currentLevel = AudioChannel.thresholdLevel
+            }
+            
+            if currentLevel > AudioChannel.maxInputLevelForAllChannels {
+                AudioChannel.maxInputLevelForAllChannels = currentLevel
+            }
+        }
+    }
+}
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -18,6 +143,37 @@ class ViewController: UIViewController {
         
         //根据文字设置Label的大小
         self.labelSizeOfText()
+        
+        let FFT = Cuboid(width: 4, height: 5, depth: 2)
+        print("the volume of FFT is \(FFT.volume)")
+        
+        let stepCounter = StepCounter()
+        stepCounter.totalSteps = 200
+        
+        stepCounter.totalSteps = 360
+        
+        stepCounter.totalSteps = 998
+        
+        
+        print(SomeClass.computedTypeProperty)
+        
+        print(SomeStructure.storedTypeProperty)
+        
+        SomeStructure.storedTypeProperty = "Another value."
+        
+        print(SomeStructure.storedTypeProperty)
+        
+        var leftChannel = AudioChannel()
+        var rightChannel = AudioChannel()
+        
+        leftChannel.currentLevel = 7
+        print(leftChannel.currentLevel)
+        
+        print(AudioChannel.maxInputLevelForAllChannels)
+        
+        rightChannel.currentLevel = 11
+        print(rightChannel.currentLevel)
+        print(AudioChannel.maxInputLevelForAllChannels)
     }
     
     func labelSizeOfText() -> Void {
@@ -84,7 +240,7 @@ class ViewController: UIViewController {
         
         //获取系统所有字体的字体名
         //75
-        print(UIFont.familyNames,UIFont.familyNames.count)
+//        print(UIFont.familyNames,UIFont.familyNames.count)
         //参数1:字体名
         //参数2:字体大小
         label.font = UIFont.init(name: "FZJKai-Z03S", size: 17)

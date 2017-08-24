@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //3.设置背景颜色
         self.window?.backgroundColor = UIColor.cyan
         
-//        self.window?.makeKeyAndVisible()  不用受到开启了
+//        self.window?.makeKeyAndVisible()  不用手动开启了
         return true
     }
 
